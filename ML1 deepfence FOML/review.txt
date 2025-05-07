@@ -1,0 +1,42 @@
+Project Title:
+Network Traffic Classification using Flow-based Features
+
+Goal:
+To build a machine learning model that can distinguish between malicious and benign network traffic based on flow statistics, and evaluate its performance using a confusion matrix and other metrics.
+
+Structure:
+ML1 deepfence
+├── FlowMeter
+│   └── assets
+│       └── Deepfence_ML_flowmeter.py
+├── pkg
+│   └── flowOutput
+│       ├── webgoat_flow_stats.csv         <- Malicious traffic data
+│       └── 2017-05-02_kali-normal22_flow_stats.csv <- Benign traffic data
+
+Environment Setup:
+
+	Created a virtual environment:
+		*VENV
+
+Installed required packages:
+	pip install pandas numpy matplotlib seaborn scikit-learn
+
+Data Loading:
+*Loaded two CSV files: one for malicious traffic (webgoat) and one for benign traffic (kali).
+
+*Added a new column Type to indicate traffic type (Benign or Malicious).
+
+*Combined both datasets and shuffled the rows randomly for training purposes.
+
+Feature Engineering:
+	flowDuration
+
+Data Cleaning:
+	Removed NaN, inf, -inf values.
+
+	Converted the dataset into X (features) and y (labels).
+
+	Ensured all features are numeric and labels are either "Benign" or "Malicious".
+
+
